@@ -28,6 +28,10 @@ body {
   justify-self: center;
   width: calc(@mobile-width - 3rem);
   padding: 1.5rem;
+  background-image: url(./images/bg-pattern-top-mobile.svg),
+    url(./images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat no-repeat;
+  background-position: left 0vw top 0vh, right 0vw bottom 0vh;
 }
 
 .main-description {
@@ -127,12 +131,16 @@ body {
     align-self: center;
     justify-self: center;
     width: calc(@desktop-width - 300px);
+    padding: 0 150px;
+    background-image: url(./images/bg-pattern-top-desktop.svg),
+      url(./images/bg-pattern-bottom-desktop.svg);
   }
 
   .desktop-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 3rem;
   }
 
   .main-description {
@@ -145,7 +153,7 @@ body {
     }
 
     &__description {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       line-height: 2rem;
     }
   }
@@ -172,11 +180,13 @@ body {
 
   .reviews-cards {
     flex-direction: row;
-    gap: 2rem;
+    gap: 2.25rem;
+    margin-top: 4rem;
+    padding-bottom: 5rem;
   }
 
   .review-card {
-    padding: 2.25rem 1.85rem;
+    padding: 2.25rem 2rem;
 
     &:nth-child(2) {
       margin-top: 1rem;
@@ -186,6 +196,10 @@ body {
     &:nth-child(3) {
       margin-top: 2rem;
       margin-bottom: -2rem;
+    }
+
+    &__header {
+      gap: 1.5rem;
     }
   }
 }
