@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+@mobile-width: 375px;
+@desktop-width: 1440px;
+@dark-magenta: hsl(300, 43%, 22%);
+@soft-pink: hsl(333, 80%, 67%);
+@dark-gray-magenta: hsl(303, 10%, 53%);
+@light-gray-magenta: hsl(300, 24%, 96%);
+@white: hsl(0, 0%, 100%);
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #fffffa;
+  display: grid;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.container {
+  align-self: center;
+  justify-self: center;
+  width: calc(@mobile-width - 3rem);
+  padding: 1.5rem;
+}
+
+.main-description {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &__title {
+    padding: 2rem 0;
+    color: @dark-magenta;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  &__description {
+    color: @dark-gray-magenta;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.5rem;
+  }
+}
+
+.stars-cards,
+.reviews-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stars-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: @light-gray-magenta;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+
+  &__stars {
+    height: 1rem;
+    width: 26%;
+    background-image: url(./images/icon-star.svg);
+    background-repeat: repeat-x;
+  }
+
+  &__text {
+    color: @dark-magenta;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+
+.review-card {
+  background-color: @dark-magenta;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: @white;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__profile-picture {
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+
+  &__identification {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__status {
+    color: @soft-pink;
+    font-weight: 400;
+  }
+
+  &__review {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    align-self: center;
+    justify-self: center;
+    width: calc(@desktop-width - 300px);
+  }
+
+  .desktop-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-description {
+    text-align: left;
+    max-width: 550px;
+
+    &__title {
+      font-size: 4rem;
+      line-height: 3.5rem;
+    }
+
+    &__description {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  .stars-card {
+    flex-direction: row;
+    padding: 1rem 2rem;
+    width: 375px;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(1) {
+      margin-left: -4.5rem;
+    }
+
+    &:nth-child(2) {
+      margin-left: -2.25rem;
+    }
+
+    &__stars {
+      max-width: 85px;
+    }
+  }
+
+  .reviews-cards {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .review-card {
+    padding: 2.25rem 1.85rem;
+
+    &:nth-child(2) {
+      margin-top: 1rem;
+      margin-bottom: -1rem;
+    }
+
+    &:nth-child(3) {
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+    }
+  }
+}
